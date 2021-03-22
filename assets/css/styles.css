@@ -1,60 +1,117 @@
+/* regular sized screen css */
+body{
+
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
 header{
 
-    display: flex;
+    z-index: 1;
+    display:flex;
     flex: 0 1 100%;
-    height: 50px;
-    justify-content: space-between;
-    align-content: center;
-
-}
-
-
-#highscore{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:1.5em;
+    color: #f0ece3;
+    background-color:#08353A;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: .25em;
+    font-size: 45px;
+    box-shadow:  2px 2px 10px #273638;
     
-}
-
-.timer{
-
-    margin: 0;
-
-}
-
-#time-left{
-
 }
 
 main{
 
+
+    display:flex;
+    flex: 0 1 50%;
+    width:12em;
+    height: 12em;
+    position: relative;
+    color: #08353A;
+    background-color: #7e9194;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #273638;
+
     
-    display: flex;
-   
-    margin: 200px;
+}
 
+aside{
+
+    display:flex;
     flex-direction: column;
-
+    flex: 0 1 auto;
+    
+    width: 200px;
+    height: 200px;
+    
+    position: relative;
+    color: #08353A;
+    background-color: #7e9194;
+    margin: 15px;
+    justify-content: center;
     align-items: center;
 
-    background-color: khaki;
-    border: 3px solid black;
-
-}
-
-#question{
-
-}
-
-.options{
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #273638;
 
 
 }
 
+/* css for mid sized screens */
+@media screen and (max-width: 850px){
 
+    header{
 
+        height:1.75em;
+        align-items: center;
+        justify-content: center;
+        font-size: 35px;
+        
+    }
 
+    body{
 
+        flex-direction: column;
+        justify-content: flex-start;
+      
 
+    }
 
+    main{
 
+        margin-top: 5em;
+        width:100%;
+        height:20em;
+        border-radius: 0px;
 
+    }
 
+    aside{
+        margin-top: 100px;
+    }
 
+   
+}
+
+/* css for smaller screens */
+@media screen and (max-width: 550px){
+
+    header{
+
+        min-width: 320px;
+        height:2em;
+        font-size: 25px;
+      
+    }
+
+}
