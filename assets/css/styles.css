@@ -34,13 +34,16 @@ main{
     display:flex;
     flex: 0 1 50%;
     width:12em;
-    height: 12em;
+    height: 25em;
     position: relative;
     color: #08353A;
     background-color: #7e9194;
     margin: 15px;
     border-radius: 10px;
     box-shadow: 2px 2px 10px #273638;
+
+    justify-content: center;
+    align-items: center;
 
     
 }
@@ -49,6 +52,7 @@ aside{
 
     display:flex;
     flex-direction: column;
+    
     flex: 0 1 auto;
     
     width: 200px;
@@ -64,6 +68,17 @@ aside{
     border-radius: 10px;
     box-shadow: 2px 2px 10px #273638;
 
+
+}
+
+.start-button{
+
+   
+    color: white;
+    background-color: #08353A;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
 
 }
 
