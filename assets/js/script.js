@@ -1,5 +1,5 @@
 //array of question objects.
-var questions = [
+var codeQuiz = [
     //question 1
     {
         question: "Which of the following is a valid variable name?",
@@ -50,10 +50,25 @@ var questions = [
 var timeE1 = document.getElementById('timer');
 var mainElement = document.getElementById('main-card');
 
+
+var quizQuestion = document.createElement("h2");
+quizQuestion.setAttribute('style', 'color:black');
+
+
+var button1 = document.getElementById("button1");
+button1.setAttribute('style', 'color:black');
+
+
+
+
+var playerAnswer;
+
 var secondsLeft = 60;
 var startCountDown = 4;
 
 var startButton = document.createElement('button');
+
+var optionList = document.getElementById("question-list")
 
 startButton.setAttribute('class', 'start-button');
 
@@ -90,19 +105,29 @@ function gameStartCounter(){
 
 //start game function
 function startGame(){
-    
-    
     console.log("started")
 
+    
 
+    quizQuestion.textContent = codeQuiz[0].question;
+    button1.textContent = codeQuiz[0].A;
+    
+
+    
+
+    console.log(button1)
+
+
+    console.log(quizQuestion);
+
+    mainElement.appendChild(quizQuestion);
+    button1.appendChild(quizQuestion);
+
+    
 }
-
 
 //end game function
 function endGame(){
-
-
-
 }
 
 //when the start button is pressed remove the start button and start the game.
@@ -116,8 +141,6 @@ startButton.addEventListener("click", function(event){
 
 
 
-
-//function for running the quiz
 
 //function to check if answer is correct or incorrect.
 
