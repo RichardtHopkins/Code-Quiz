@@ -16,6 +16,5 @@ A quiz to test my javascript knowledge created in javascript using the DOM to dy
 
 ## Link to live website:
 
-[Link to codeQuiz website]
-(https://richardthopkins.github.io/Code-Quiz/)
+[Link to codeQuiz website](https://richardthopkins.github.io/Code-Quiz/)
 
