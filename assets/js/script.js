@@ -3,187 +3,134 @@ var codeQuiz = [
     //question 1
     {
         question: "Which of the following is a valid variable name?",
-        A: "!variable",
-        B: "8digits",
-        C: "_myVar",
-        D: "123",
-        answer: "C"
+        1: "!variable",
+        2: "8digits",
+        3: "_myVar",
+        4: "123",
+        answer: "3"
     },
     //question 2
     {
         question: "What symbol is used to assign a statement to a variable?",
-        A: "+",
-        B: ">",
-        C: "#",
-        D: "=",
-        answer: "D"
+        1: "+",
+        2: ">",
+        3: "#",
+        4: "=",
+        answer: "4"
     },
     //question 3
     {
          question: "Which of these is not a primitave data type?",
-         A: "var",
-         B: "number",
-         C: "boolean",
-         D: "undefined",
-         answer: "A"
+         1: "var",
+         2: "number",
+         3: "boolean",
+         4: "undefined",
+         answer: "1"
     },
     //question 4
     {
         question: "Which of the following is the correct syntax for the the while loop?",
-        A: "while (statement) condition;",
-        B: "while (condition) statement;",
-        C: "while (initial expression | condition | increment) statement;",
-        D: "while (condition) {statement}else{statement};",
-        answer: "B"
+        1: "while (statement) condition;",
+        2: "while (condition) statement;",
+        3: "while (initial expression | condition | increment) statement;",
+        4: "while (condition) {statement}else{statement};",
+        answer: "2"
     },
     //question 5
     {
         question: "How many primitive types does javascript have?",
-        A: "5",
-        B: "11",
-        C: "7",
-        D: "Too many!",
-        answer: "C"
+        1: "5",
+        2: "11",
+        3: "7",
+        4: "Too many!",
+        answer: "3"
     }
 ];
 
-var timeE1 = document.getElementById('timer');
+//find the main and aside elements and asign them to variables.
 var mainElement = document.getElementById('main-card');
+var asideEl = document.getElementById('time-box')
 
+//create the timer h2 element.
+var timeE1 = document.createElement('h2');
 
-var quizQuestion = document.createElement("h2");
-quizQuestion.setAttribute('style', 'color:black');
+//create question and answer elements and assign them variables.
+var question = document.createElement('h2');
+var ans1 = document.createElement('button');
+var ans2 = document.createElement('button');
+var ans3 = document.createElement('button');
+var ans4 = document.createElement('button');
 
+//high score and retry button.
+var highScore = document.createElement('button');
+var retry = document.createElement('button');
 
-var button1 = document.getElementById("button1");
-button1.setAttribute('style', 'color:black');
+//variable that will store the users answer.
+var selectedAns;
 
+//initial seconds left
+var secondsLeft = 1;
 
-
-
-var playerAnswer;
-
-var secondsLeft = 60;
-var startCountDown = 4;
-
+//creates start button on game open and sets its styles.
 var startButton = document.createElement('button');
-
-var optionList = document.getElementById("question-list")
-
 startButton.setAttribute('class', 'start-button');
-
-startButton.textContent = "START";
-
+startButton.textContent = "Start";
 mainElement.appendChild(startButton);
 
-// starts the  when called
+// starts the timer  when called
 function gameTimer(){
     var timer = setInterval(function(){
         secondsLeft--;
         timeE1.textContent = secondsLeft;
-        if(secondsLeft === 0){
-            timeE1.textContent = "";
+        if(secondsLeft === 0 || secondsLeft < 0){
             clearInterval(timer);
+
+            // end the game
+            endGame();
         }
     }, 1000);
 };
 
-var startCountDown = 4;
-//start count down.
-function gameStartCounter(){
-    var timer = setInterval(function(){
-        startCountDown--;
-        mainElement.textContent = startCountDown;
-        if(startCountDown === 0){
-            mainElement.textContent = "";
-            clearInterval(timer);
-            gameTimer();
-            startGame();
-        }
-    }, 1000);
-};
+
 
 //start game function
 function startGame(){
     console.log("started")
-
-    
-
-    quizQuestion.textContent = codeQuiz[0].question;
-    button1.textContent = codeQuiz[0].A;
-    
-
-    
-
-    console.log(button1)
-
-
-    console.log(quizQuestion);
-
-    mainElement.appendChild(quizQuestion);
-    button1.appendChild(quizQuestion);
-
-    
+ 
 }
 
 //end game function
 function endGame(){
+    console.log('ended')
+
+    asideEl.removeChild(timeE1);
+
+
+
 }
 
 //when the start button is pressed remove the start button and start the game.
 startButton.addEventListener("click", function(event){
     event.preventDefault();
-    startButton.setAttribute("style", "display: none;");
-    gameStartCounter();
+
+    // removes the start button after being pressed
+    mainElement.removeChild(startButton)
+
+    // sets the inital text fot he text box to 60
+    timeE1.textContent = 60;
+    asideEl.appendChild(timeE1);
+
+    //start the game and timer
+    gameTimer();
+    startGame();
 });
 
 
-
-
-
+// to remove a elemet
+// var elem = document.getElementById("myDiv");
+// elem.parentNode.removeChild(elem);
 
 //function to check if answer is correct or incorrect.
 
-//function for randomly selecting the question and answer order.
-
-//function for count down timer
-
 //button click events. for start button high score button and question buttons.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
